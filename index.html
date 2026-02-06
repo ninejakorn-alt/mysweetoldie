@@ -1,0 +1,1329 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy 25th Birthday จ๋าจ้า 🦄💕</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Mitr:wght@200;300;400;500;600&family=Sarabun:wght@300;400;600&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --pink-light: #FFE5EC;
+            --pink-medium: #FFB3C6;
+            --nav-height: 0px;
+            --pink-dark: #FF85A1;
+            --purple-light: #E5DEFF;
+            --cream: #FFF8F0;
+            --white: #FFFFFF;
+            --text-dark: #5A4A5A;
+        }
+        
+        body {
+            font-family: 'Sarabun', sans-serif;
+            background: linear-gradient(135deg, var(--pink-light) 0%, var(--purple-light) 100%);
+            color: var(--text-dark);
+            overflow-x: hidden;
+            position: relative;
+            min-height: 100vh;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Floating hearts and unicorns animation */
+        .floating-elements {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+        }
+        
+        .float-item {
+            position: absolute;
+            animation: float 15s infinite ease-in-out;
+            opacity: 0.6;
+            font-size: 2rem;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.6; }
+            90% { opacity: 0.6; }
+            100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+        }
+        
+        /* Main container */
+        .container {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            width: 100%;
+        }
+        
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 30px;
+            box-shadow: 0 2px 20px rgba(255, 133, 161, 0.2);
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .nav-btn {
+            background: linear-gradient(135deg, var(--pink-medium), var(--pink-dark));
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-family: 'Mitr', sans-serif;
+            font-weight: 400;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 133, 161, 0.3);
+        }
+        
+        .nav-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 133, 161, 0.4);
+        }
+        
+        /* ใส่โค้ดใหม่ชุดนี้เข้าไปแทน */
+        .section {
+            min-height: auto;
+            display: none; /* ซ่อนออกจากโครงสร้างหน้าเว็บไปเลย */
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            padding: calc(var(--nav-height) + 20px) 20px 50px;
+            /* เอา opacity และ transition ออก เพราะเราจะใช้ animation แทน */
+        }
+        
+        .section.home-section {
+            min-height: calc(100vh - var(--nav-height));
+            justify-content: center;
+        }
+        
+        .section.active {
+            display: flex; /* แสดงผลเมื่อเป็น active เท่านั้น */
+            animation: fadeInSection 0.8s ease forwards; /* เรียกใช้ Animation */
+        }
+
+        /* สร้าง Animation เพื่อให้ค่อยๆ ลอยขึ้นมาสวยๆ เหมือนเดิม */
+        @keyframes fadeInSection {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Home Section */
+        .home-section {
+            text-align: center;
+        }
+        
+        .birthday-title {
+            font-family: 'Mitr', sans-serif;
+            font-size: 4rem;
+            font-weight: 600;
+            background: linear-gradient(135deg, var(--pink-dark), var(--purple-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+            animation: fadeInDown 1s ease;
+        }
+        
+        .birthday-subtitle {
+            font-family: 'Mitr', sans-serif;
+            font-size: 2rem;
+            color: var(--pink-dark);
+            margin-bottom: 30px;
+            animation: fadeInUp 1s ease 0.3s both;
+        }
+        
+        .birthday-message {
+            font-size: 1.3rem;
+            max-width: 600px;
+            line-height: 1.8;
+            margin: 30px auto;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(255, 133, 161, 0.2);
+            animation: fadeIn 1s ease 0.6s both;
+        }
+        
+        .unicorn-big {
+            font-size: 6rem;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        /* Letter Section */
+        .letter-container {
+            max-width: 800px;
+            background: white;
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(255, 133, 161, 0.2);
+            position: relative;
+            margin: 20px;
+        }
+        
+        .letter-container::before {
+            content: '💌';
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 3rem;
+        }
+        
+        .letter-title {
+            font-family: 'Mitr', sans-serif;
+            font-size: 2rem;
+            color: var(--pink-dark);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .letter-content {
+            font-size: 1.1rem;
+            line-height: 2;
+            text-align: left;
+        }
+        
+        .letter-content p {
+            margin-bottom: 20px;
+        }
+        
+        .signature {
+            text-align: right;
+            font-family: 'Mitr', sans-serif;
+            font-size: 1.3rem;
+            color: var(--pink-dark);
+            margin-top: 40px;
+        }
+        
+        /* Timeline Section */
+        .timeline-container {
+            max-width: 900px;
+            width: 100%;
+            padding: 20px;
+        }
+        
+        .timeline-title {
+            font-family: 'Mitr', sans-serif;
+            font-size: 2.5rem;
+            color: var(--pink-dark);
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .timeline-item {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 20px rgba(255, 133, 161, 0.15);
+            transition: all 0.3s ease;
+            position: relative;
+            padding-left: 80px;
+        }
+        
+        .timeline-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 8px 30px rgba(255, 133, 161, 0.25);
+        }
+        
+        .timeline-date {
+            position: absolute;
+            left: 20px;
+            top: 30px;
+            background: linear-gradient(135deg, var(--pink-medium), var(--pink-dark));
+            color: white;
+            padding: 8px 12px;
+            border-radius: 10px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+        }
+        
+        .timeline-content h3 {
+            font-family: 'Mitr', sans-serif;
+            color: var(--pink-dark);
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+        
+        .timeline-content p {
+            line-height: 1.8;
+            font-size: 1rem;
+        }
+        
+        /* 1. แก้ที่ตัวกรอบรูป ให้สูงตามเนื้อหาข้างใน (auto) */
+        .timeline-image-placeholder {
+            width: 100%;
+            height: auto; /* แก้จาก 200px เป็น auto */
+            min-height: 200px; /* กันไว้เผื่อรูปโหลดไม่ติด จะได้ไม่ยุบหายไป */
+            background: linear-gradient(135deg, var(--pink-light), var(--purple-light));
+            border-radius: 10px;
+            margin-top: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-dark);
+            font-style: italic;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* 2. แก้ที่ตัวรูปภาพ ให้แสดงสัดส่วนจริง */
+        .timeline-image-placeholder img {
+            width: 100%;
+            height: auto; /* แก้จาก 100% เป็น auto */
+            object-fit: contain; /* เปลี่ยนจาก cover เป็น contain (หรือลบออกก็ได้) */
+            display: none;
+            border-radius: 10px; /* เพิ่มความมนให้รูป */
+        }
+
+        /* เพิ่มส่วนนี้เพื่อให้รูปแสดงผลเมื่อมีคลาส has-image */
+        .timeline-image-placeholder.has-image img {
+            display: block;
+        }
+        
+        .timeline-image-placeholder.has-image::before {
+            display: none;
+        }
+        
+        /* Reasons Section */
+        .reasons-container {
+            max-width: 1000px;
+            width: 100%;
+            padding: 20px;
+        }
+        
+        .reasons-title {
+            font-family: 'Mitr', sans-serif;
+            font-size: 2.5rem;
+            color: var(--pink-dark);
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .reasons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .reason-card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(255, 133, 161, 0.15);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .reason-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(255, 133, 161, 0.25);
+        }
+        
+        .reason-emoji {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .reason-text {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        
+        /* Gallery Section */
+        .gallery-container {
+            max-width: 1000px;
+            width: 100%;
+            padding: 20px;
+        }
+        
+        .gallery-title {
+            font-family: 'Mitr', sans-serif;
+            font-size: 2.5rem;
+            color: var(--pink-dark);
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .gallery-item {
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, var(--pink-light), var(--purple-light));
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(255, 133, 161, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-dark);
+            font-style: italic;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 30px rgba(255, 133, 161, 0.25);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: none;
+        }
+        
+        .gallery-item.has-image img {
+            display: block;
+        }
+        
+        .gallery-item.has-image::before {
+            display: none;
+        }
+        
+        /* Game Section */
+        .game-container {
+            max-width: 600px;
+            width: 100%;
+            padding: 20px;
+        }
+        
+        .game-title {
+            font-family: 'Mitr', sans-serif;
+            font-size: 2.5rem;
+            color: var(--pink-dark);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .game-card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(255, 133, 161, 0.2);
+            text-align: center;
+        }
+        
+        .question {
+            font-size: 1.3rem;
+            font-weight: 500;
+            margin-bottom: 30px;
+            color: var(--text-dark);
+        }
+        
+        .answers {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .answer-btn {
+            background: white;
+            border: 3px solid var(--pink-medium);
+            padding: 15px 25px;
+            border-radius: 15px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            color: var(--text-dark);
+        }
+        
+        .answer-btn:hover {
+            background: var(--pink-light);
+            transform: scale(1.02);
+        }
+        
+        .answer-btn.correct {
+            background: linear-gradient(135deg, #90EE90, #32CD32);
+            border-color: #32CD32;
+            color: white;
+            animation: correctAnswer 0.5s ease;
+        }
+        
+        .answer-btn.wrong {
+            background: linear-gradient(135deg, #FFB3BA, #FF6B7A);
+            border-color: #FF6B7A;
+            color: white;
+            animation: wrongAnswer 0.5s ease;
+        }
+        
+        @keyframes correctAnswer {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
+        @keyframes wrongAnswer {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-10px); }
+            75% { transform: translateX(10px); }
+        }
+        
+        .game-result {
+            font-size: 1.5rem;
+            margin-top: 30px;
+            font-weight: 500;
+            min-height: 40px;
+        }
+        
+        .next-btn {
+            background: linear-gradient(135deg, var(--pink-medium), var(--pink-dark));
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            margin-top: 20px;
+            display: none;
+            box-shadow: 0 4px 15px rgba(255, 133, 161, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .next-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 133, 161, 0.4);
+        }
+        
+        .game-score {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--pink-dark);
+            font-weight: 600;
+        }
+        
+        /* Music Player */
+        .music-player {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: white;
+            padding: 15px 25px;
+            border-radius: 50px;
+            box-shadow: 0 5px 25px rgba(255, 133, 161, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            z-index: 1000;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .music-player:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 30px rgba(255, 133, 161, 0.4);
+        }
+        
+        .music-icon {
+            font-size: 1.5rem;
+            animation: musicPulse 1s infinite;
+        }
+        
+        .music-player.paused .music-icon {
+            animation: none;
+        }
+        
+        @keyframes musicPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+        
+        .music-text {
+            font-family: 'Mitr', sans-serif;
+            color: var(--pink-dark);
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .birthday-title {
+                font-size: 2.5rem;
+            }
+            
+            .birthday-subtitle {
+                font-size: 1.5rem;
+            }
+            
+            .letter-container {
+                padding: 30px 20px;
+            }
+            
+            .timeline-item {
+                padding-left: 20px;
+            }
+            
+            .timeline-date {
+                position: relative;
+                left: 0;
+                top: 0;
+                writing-mode: horizontal-tb;
+                margin-bottom: 15px;
+                display: inline-block;
+            }
+            
+            .nav {
+                padding: 10px;
+                gap: 10px;
+            }
+            
+            .nav-btn {
+                padding: 8px 15px;
+                font-size: 0.8rem;
+            }
+            
+            .music-player {
+                bottom: 15px;
+                right: 15px;
+                padding: 12px 20px;
+            }
+        }
+        
+        /* Special effects */
+        .sparkle {
+            position: fixed;
+            pointer-events: none;
+            animation: sparkleAnim 1s ease-out forwards;
+        }
+        
+        @keyframes sparkleAnim {
+            0% {
+                transform: scale(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(2) rotate(180deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Elements -->
+    <div class="floating-elements" id="floatingElements"></div>
+    
+    <!-- Navigation -->
+    <nav class="nav">
+        <button class="nav-btn" onclick="showSection('home')">🏠 หน้าแรก</button>
+        <button class="nav-btn" onclick="showSection('letter')">💌 จดหมาย</button>
+        <button class="nav-btn" onclick="showSection('timeline')">📅 ความทรงจำ</button>
+        <button class="nav-btn" onclick="showSection('reasons')">💖 เหตุผลที่เบิ้บบู้</button>
+        <button class="nav-btn" onclick="showSection('gallery')">📸 แกลเลอรี่</button>
+        <button class="nav-btn" onclick="showSection('game')">🎮 เกม</button>
+    </nav>
+    
+    <!-- Music Player -->
+    <div class="music-player" onclick="toggleMusic()">
+        <div class="music-icon">🎵</div>
+        <div class="music-text">Invisible String</div>
+    </div>
+    
+    <audio id="bgMusic" loop>
+        <source src="Taylor Swift – invisible string Official Lyric Video.mp3" type="audio/mpeg">
+    </audio>
+    
+    <div class="container">
+        <!-- Home Section -->
+        <section id="home" class="section active home-section">
+            <div class="unicorn-big">🦄</div>
+            <h1 class="birthday-title">Happy 25th Birthday</h1>
+            <h2 class="birthday-subtitle">จ๋าจ้า 💕</h2>
+            <div class="birthday-message">
+                <p>🌹 วันนี้เป็นวันพิเศษของคนพิเศษที่สุดในชีวิตนาย</p>
+                <p>ขอให้จ๋าจ้ามีความสุขมากๆ สุขภาพแข็งแรง</p>
+                <p>ทุกวันมีแต่รอยยิ้ม เหมือนที่ทำให้นายยิ้มได้ทุกวันเลย</p>
+                <p>รักจ๋าจ้ามากที่สุดในโลกใบนี้ 🦄💖</p>
+            </div>
+        </section> 
+        
+        <!-- Letter Section -->
+        <section id="letter" class="section">
+            <div class="letter-container">
+                <h2 class="letter-title">ถึง จ๋าจ้าเบ้บบี้ 💌</h2>
+                <div class="letter-content">
+                    <p>วันนี้เป็นวันเกิดครบ 25 ปีของจ๋าจ้า คนที่นายรักที่สุดในโลก</p>
+                    
+                    <p>นายยังจำวันแรกที่ได้คุยกับจ๋าจ้าได้เลย 18 ตุลาคม 2568 วันที่ทุกอย่างเริ่มต้นขึ้น และพอได้เจอจริง ๆ ที่ Terminal Asoke วันที่ 2 พฤศจิกายน จ๋าจ้าจุ๊บนายตั้งแต่ครั้งแรกเลย ทำให้นายงงมากกก</p>
+                    
+                    <p>จ๋าจ้าเป็นคนที่น่ารักมากๆ ทั้งยังเป็นนักกายภาพบำบัดที่เก่งมากด้วย (แม้จะบอกว่าตัวเองไม่เก่ง แต่นายรู้ว่าจ๋าจ้าเก่งที่สุดในโลก!) เป็นคนขยัน มีความรับผิดชอบ ดูแลคนไข้ดี และที่สำคัญ... ตัวหอมมากกก 🌸</p>
+                    
+                    <p>นายชอบทุกอย่างของจ๋าจ้า ตั้งแต่ที่จ๋าจ้าชอบกอด (นายก็เป็นเหมือนกัน) ชอบกินจุกจิก ชอบมัทฉะลาเต้กับแบล็คคอฟฟี่มะพร้าวหวานห้าฉิบ ชอบซุ่มซ่าม (น่ารักมาก) ชอบไปเดินสวนเบญ (แต่ขอให้ระวังตัวด้วยนะ นายเป็นห่วง)</p>
+                    
+                    <p>นายจะไม่ลืมวันที่เราไปดู Zootopia 2 ด้วยกัน วันที่นายให้ดอกกุหลาบกับจ๋าจ้าครั้งแรก 🌹 วันที่นอนดูซีรีส์เรื่องสาธุ 2 ดู Avatar ทั้ง 2 ภาค วันที่ไปกินตี๋น้อยแล้วไประบายสีหมีพูด้วยกัน (จ๋าจ้าระบายสีเนียบสุดๆ นายทำแค่ฐานไม่ต้องทำอะไรเลย 😆)</p>
+                    
+                    <p>29 มกราคม 2569 เป็นวันครบรอบของเราที่นายจะไม่มีวันลืม ทุกวันที่ได้อยู่กับจ๋าจ้า นายมีความสุขมากๆ</p>
+                    
+                    <p>ในปีที่ 25 นี้ ขอให้จ๋าจ้ามีความสุขมากๆ สมหวังในทุกสิ่งที่ตั้งใจไว้ งานการเป็นนักกายภาพบำบัดก็ขอให้ราบรื่น มีแต่คนไข้ที่รักและชื่นชมจ๋าจ้า (แบบที่นายชื่นชม) 💪</p>
+                    
+                    <p>ขอให้ได้ฟัง Taylor Swift แบบมีความสุข (โดยเฉพาะ Invisible String ที่จ้าฟังแล้วนึกถึงนาย) ได้ไปเดินเขาที่จ๋าจ้าชอบ ได้กินของหวานและอาหารเกาหลีเกาใจ และที่สำคัญ... อย่าวีนนะจ๋าจ้า นายจะทำให้จ๋าจ้ายิ้มเสมอ! 😊</p>
+                    
+                    <p>นายสัญญาว่าจะดูแลจ๋าจ้าให้ดี ไม่บังคับจ๋าจ้า จะไม่ทำให้พื้นห้องน้ำเปียก จะเดินจับแค่นิ้วก้อยตอนอากาศร้อน จะไม่ป่วนตอนจ๋าจ้าทำงาน และที่สำคัญ... ถ้าจ๋าจ้างอนหรืองอแง นายจะง้อทันที! 💕</p>
+                    
+                    <p>รักจ๋าจ้ามากๆ นะ ขอบคุณที่เข้ามาในชีวิตนาย ขอบคุณที่ทำให้นายยิ้มได้ทุกวัน ขอบคุณที่เป็นจ๋าจ้าของนาย 🦄</p>
+                    
+                    <p>Happy Birthday ครับจ๋าจ้า 🎂🎉</p>
+                </div>
+                <div class="signature">
+                    ร้ากที่สู้ดด<br>
+                    นายยย 💖<br>
+                    7 กุมภาพันธ์ 2569
+                </div>
+            </div>
+        </section>
+        
+        <!-- Timeline Section -->
+        <section id="timeline" class="section">
+            <div class="timeline-container">
+                <h2 class="timeline-title">📅 ความทรงจำของเรา</h2>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">18 ต.ค. 68</div>
+                    <div class="timeline-content">
+                        <h3>💬 วันแรกที่คุยกัน</h3>
+                        <p>วันที่ทุกอย่างเริ่มต้น... วันแรกที่นายได้คุยกับจ๋าจ้า วันที่นิ้วหัก</p>
+                        <div class="timeline-image-placeholder has-image" data-img-id="1">
+                            <img src="IMG_2459.JPG" alt="Timeline 1">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">2 พ.ย. 68</div>
+                    <div class="timeline-content">
+                        <h3>✨ เจอกันครั้งแรก!</h3>
+                        <p>Terminal Asoke - สถานที่พิเศษที่เราเจอกันครั้งแรก กินข้าวขาหมู + ไข่ด้วยกัน (จ๋าจ้าเป็นคนสั่ง) แล้วก็ไปเดินสวนเบญ... และจ๋าจ้าก็หอมแก้มนายครั้งแรกตั้งแต่เจอกันครั้งแรกเลย! นั่งติดฝนด้วยกันเกือบถึงเที่ยงคืน 🌧️💕</p>
+                        <div class="timeline-image-placeholder has-image" data-img-id="2">
+                            <img src="S__20094978.jpg" alt="Timeline 2">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">3 พ.ย. 68</div>
+                    <div class="timeline-content">
+                        <h3>🎊 วันที่สอง</h3>
+                        <p>กินนู้นนี้ ช้อปปิ้งกัน เซนลาด → สวนที่จตจ → เซนลาดอีกรอบ วันที่มีความสุขมากๆ</p>
+                        <div class="timeline-image-placeholder has-image" data-img-id="3">
+                            <img src="S__20094979.jpg" alt="Timeline 3">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">4 พ.ย. 68</div>
+                    <div class="timeline-content">
+                        <h3>🚗 จ๋าจ้ามาส่งกลับบ้าน</h3>
+                        <p>ฮืออ น่ารักมาก จ๋าจ้ามาส่งนายกลับบ้านด้วย น่ารักมากเลย</p>
+                        <div class="timeline-image-placeholder has-image" data-img-id="4">
+                            <img src="S__20094980.jpg" alt="Timeline 4">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">29 พ.ย. 68</div>
+                    <div class="timeline-content">
+                        <h3>🎁 ของขวัญพิเศษ</h3>
+                        <p>จ๋าจ้าซื้อตุ๊กตา Judy from Zootopia ให้นาย พร้อมปากกาด้วย น่ารักอีกแล้วว 🦊</p>
+                        <div class="timeline-image-placeholder has-image" data-img-id="5">
+                            <img src="S__20094982.jpg" alt="Timeline 5">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">7 ธ.ค. 68</div>
+                    <div class="timeline-content">
+                        <h3>📱 แท็กนายครั้งแรก</h3>
+                        <p>จ๋าจ้าลงสตอรี่รูปตัวเองแล้วแท็กนายครั้งแรก เขินจังงงง 😊💕</p>
+                        <div class="timeline-image-placeholder has-image" data-img-id="6">
+                            <img src="S__20094983.jpg" alt="Timeline 6">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">10 ธ.ค. 68</div>
+                    <div class="timeline-content">
+                        <h3>🎬 ดูหนัง Zootopia 2 + ดอกกุหลาบแรก</h3>
+                        <p>ครั้งที่สองที่เจอกัน ดูหนัง Zootopia 2 ด้วยกัน และนายให้ดอกกุหลาบ 🌹 กับจ๋าจ้าครั้งแรก วันพิเศษมั้ยนะ</p>
+                        <div class="timeline-image-placeholder has-image" data-img-id="7">
+                            <img src="S__20094984.jpg" alt="Timeline 7">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">11 ธ.ค. 68</div>
+                    <div class="timeline-content">
+                        <h3>🏠 อยู่ด้วยกันทั้งวัน</h3>
+                        <p>อยู่กับจ๋าจ้าที่ห้องจ๋าจ้าทั้งวัน นอนดูซีรีส์ด้วยกันครั้งแรกเรื่องสาธุ 2 มีความสุขมากๆ</p>
+                        <div class="timeline-image-placeholder has-image" data-img-id="8">
+                            <img src="S__20094985.jpg" alt="Timeline 8">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">12 ธ.ค. 68</div>
+                    <div class="timeline-content">
+                        <h3>🌙 ค่ำคืนด้วยกัน</h3>
+                        <p>ตอนกลางวันจ๋าจ้าทำงาน กลางคืนได้อยู่ด้วยกัน ทุกช่วงเวลาที่ได้อยู่กับจ๋าจ้านั้นง่วง</p>
+                        <div class="timeline-image-placeholder has-image" data-img-id="9">
+                            <img src="S__20094986.jpg" alt="Timeline 9">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">13 ธ.ค. 68</div>
+                    <div class="timeline-content">
+                        <h3>👋 จ๋าจ้ามาส่งอีกแล้ว</h3>
+                        <p>ต้องกลับไปเรียน จ๋าจ้าก็มาส่งเหมือนเดิมเลย น่ารักซังง 💕</p>
+                        <div class="timeline-image-placeholder has-image" data-img-id="10">
+                            <img src="S__20094987.jpg" alt="Timeline 10">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">26 ธ.ค. 68</div>
+                    <div class="timeline-content">
+                        <h3>✈️ เจอกันที่สนามบิน + Avatar</h3>
+                        <p>กลับไปเจอจ๋าจ้าอีกครั้ง ดีใจมากๆ เลย เจอกันที่สนามบิน นั่งรอประมาณ 1:30 ชม. แต่เป็น 1 ชม.ที่นายมีความสุขสุดๆ ตอนเย็นไปเดินเล่นกันแถวหอจ๋าจ้า นายแอบซื้อตุ๊กตามาให้จ๋าจ้า (ปวดหลัง 😅) นอนดูหนัง Avatar ภาค 1 จ๋าจ้าดูเหมือนจะชอบนะ ดีใจจัง!</p>
+                        <div class="timeline-image-placeholder has-image" data-img-id="11">
+                            <img src="S__20094988.jpg" alt="Timeline 11">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">27 ธ.ค. 68</div>
+                    <div class="timeline-content">
+                        <h3>🍜 ฮาจิ + ลงสตอรี่ถึงนาย</h3>
+                        <p>จ๋าจ้าเลิกงานแล้วไปกินราเมงกัน ร้านฮาจิ อร่อยดี และจ๋าจ้าลงสตอรี่ถึงนายด้วย จะบ้า เขินจัง! 😍</p>
+                        <div class="timeline-image-placeholder has-image" data-img-id="12">
+                            <img src="S__20094989.jpg" alt="Timeline 12">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">28 ธ.ค. 68</div>
+                    <div class="timeline-content">
+                        <h3>🎬 Avatar 2 + ยำมาม่า + KFC</h3>
+                        <p>วันนี้จ๋าจ้าทำงาน แต่ชวนดู Avatar ภาค 2 กัน นายตอบตกลงแบบไม่ต้องคิดไรเลย จ๋าจ้าซื้อยำมาม่ามาให้กินด้วย แต่ไม่อิ่มเลยจัด KFC 1 เซ็ท อิ่มแปร้เลย นอนดูหนังกันจนจบ 🎥</p>
+                        <div class="timeline-image-placeholder has-image" data-img-id="13">
+                            <img src="S__20094990.jpg" alt="Timeline 13">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">29 ธ.ค. 68</div>
+                    <div class="timeline-content">
+                        <h3>🎨 วันที่แฮปปี้มากๆ - ตี๋น้อย + ระบายสีหมีพู</h3>
+                        <p>วันนี้แฮปปี้มากๆ เลย ได้ไปกินตี๋น้อยกับจ๋าจ้าครั้งแรก จ๋าจ้าเลี้ยงนายด้วย ซ้อสุดๆ! กินเสร็จไปเดินงานแฟร์ ตอนแรกนายชวนจ๋าจ้าระบายสี แต่จ๋าจ้าไม่อยาก เดินไปเดินมาจ๋าจ้าบอกระบายกันดีกว่า นายให้จ๋าจ้าเลือก จ๋าจ้าเลือกหมีพู จ๋าจ้าระบายสีเก่งมากเลย เนียบสุดๆ นายระบายฐานไม่ต้องทำอะไร 😆 วันนี้นายมีความสุขมากเลย!</p>
+                        <div class="timeline-image-placeholder has-image" data-img-id="14">
+                            <img src="S__20094991.jpg" alt="Timeline 14">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">29 ม.ค. 69</div>
+                    <div class="timeline-content">
+                        <h3>💑 วันครบรอบของเรา</h3>
+                        <p>วันที่พิเศษที่สุด วันครบรอบของเรา วันที่นายจะไม่มีวันลืม รักจ๋าจ้ามากที่สุด 💖</p>
+                        <div class="timeline-image-placeholder has-image" data-img-id="15">
+                            <img src="S__20094992.jpg" alt="Timeline 15">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Reasons Section -->
+        <section id="reasons" class="section">
+            <div class="reasons-container">
+                <h2 class="reasons-title">💖 เหตุผลที่นายรักจ๋าจ้า</h2>
+                <div class="reasons-grid">
+                    <div class="reason-card">
+                        <div class="reason-emoji">🦄</div>
+                        <div class="reason-text">เพราะจ๋าจ้าเป็นเหมือนยูนิคอร์น มีความต่างแตกเอ้ยแตกต่าง ไม่เหมือนใคร</div>
+                    </div>
+                    
+                    <div class="reason-card">
+                        <div class="reason-emoji">💪</div>
+                        <div class="reason-text">เพราะจ๋าจ้าเป็นนักกายภาพบำบัดที่เก่งมาก ๆ ช่วยเหลือคนอื่นได้ (แม้จะบอกว่าตัวเองไม่เก่ง แต่นายรู้ว่าเก่งที่สุด!)</div>
+                    </div>
+                    
+                    <div class="reason-card">
+                        <div class="reason-emoji">🌸</div>
+                        <div class="reason-text">เพราะตัวหอมมมม ทุกครั้งที่ใกล้กัน นายชอบกลิ่นของจ๋าจ้ามาก</div>
+                    </div>
+                    
+                    <div class="reason-card">
+                        <div class="reason-emoji">🤗</div>
+                        <div class="reason-text">เพราะชอบกอดดด (นายก็เป็นเหมือนกัน) ทุกครั้งที่กอดจ๋าจ้า นายรู้สึกอบอุ่นมากๆ</div>
+                    </div>
+                    
+                    <div class="reason-card">
+                        <div class="reason-emoji">☕</div>
+                        <div class="reason-text">เพราะชอบกินจุกจิก ชอบมัทฉะลาเต้ แบล็คคอฟฟี่มะพร้าวหวานห้าฉิบ น่ารักที่สุด</div>
+                    </div>
+                    
+                    <div class="reason-card">
+                        <div class="reason-emoji">🌺</div>
+                        <div class="reason-text">เพราะชอบซุ่มซ่าม มีแผลที่ไม่รู้สาเหตุ ทำให้นายต้องคอยดูแลจ๋าจ้า (และนายก็อยากดูแล)</div>
+                    </div>
+                    
+                    <div class="reason-card">
+                        <div class="reason-emoji">🌳</div>
+                        <div class="reason-text">เพราะชอบไปเดินสวนเบญคนเดียว (แม้นายจะเป็นห่วง) แต่มันทำให้เห็นว่าจ๋าจ้าเป็นคนที่รักความสงบ</div>
+                    </div>
+                    
+                    <div class="reason-card">
+                        <div class="reason-emoji">✨</div>
+                        <div class="reason-text">เพราะชอบบอกว่าตัวเองไม่เก่ง แต่ความจริงคือเก่งที่สุดในโลก ความถ่อมตัวนี้น่ารักมาก</div>
+                    </div>
+                    
+                    <div class="reason-card">
+                        <div class="reason-emoji">🥗</div>
+                        <div class="reason-text">เพราะชอบกินผัก ดูแลสุขภาพดี กินข้าวมากกว่าเส้นเพราะอิ่มนานกว่า ฉลาดมาก</div>
+                    </div>
+                    
+                    <div class="reason-card">
+                        <div class="reason-emoji">⛰️</div>
+                        <div class="reason-text">เพราะชอบภูเขามากกว่าทะเล ความรู้สึกสงบและสวยงามแบบเดียวกับจ๋าจ้า</div>
+                    </div>
+                    
+                    <div class="reason-card">
+                        <div class="reason-emoji">💼</div>
+                        <div class="reason-text">เพราะเป็นคนขยัน มีความรับผิดชอบสูง ดูแลงานและคนไข้ได้ดีมาก</div>
+                    </div>
+                    
+                    <div class="reason-card">
+                        <div class="reason-emoji">😊</div>
+                        <div class="reason-text">เพราะแม้จะชอบวีน แต่พอนายทำให้ยิ้มก็หายแล้ว รอยยิ้มของจ๋าจ้าทำให้วันนายสดใสเสมอ</div>
+                    </div>
+                    
+                    <div class="reason-card">
+                        <div class="reason-emoji">🎵</div>
+                        <div class="reason-text">เพราะชอบฟัง Taylor Swift เหมือนกัน โดยเฉพาะเพลง Invisible String ที่เหมือนเป็นเพลงของเรา</div>
+                    </div>
+                    
+                    <div class="reason-card">
+                        <div class="reason-emoji">🌹</div>
+                        <div class="reason-text">เพราะชอบดอกกุหลาบ ดอก Daisy ดอกทิวลิป โรแมนติกเหมือนหัวใจของนาย</div>
+                    </div>
+                    
+                    <div class="reason-card">
+                        <div class="reason-emoji">💗</div>
+                        <div class="reason-text">เพราะชอบสีชมพู สีที่สวยงามและอ่อนโยนเหมือนจ๋าจ้า</div>
+                    </div>
+                    
+                    <div class="reason-card">
+                        <div class="reason-emoji">👏</div>
+                        <div class="reason-text">เพราะชอบให้ชม และนายก็อยากชมจ๋าจ้าทุกวัน เพราะจ๋าจ้าทำทุกอย่างได้ดีมาก</div>
+                    </div>
+                    
+                    <div class="reason-card">
+                        <div class="reason-emoji">🏃‍♀️</div>
+                        <div class="reason-text">เพราะชอบออกกำลังกาย (แม้จะบ่นว่ากล้ามเนื้อ weak) แต่ความพยายามน่ารักมาก</div>
+                    </div>
+                    
+                    <div class="reason-card">
+                        <div class="reason-emoji">🐕</div>
+                        <div class="reason-text">เพราะชอบหมามากกว่าแมว ใจดีและรักสัตว์</div>
+                    </div>
+                    
+                    <div class="reason-card">
+                        <div class="reason-emoji">🍜</div>
+                        <div class="reason-text">เพราะชอบอาหารเกาหลี เหมือนกัน! เราจะได้กินด้วยกันบ่อยๆ</div>
+                    </div>
+                    
+                    <div class="reason-card">
+                        <div class="reason-emoji">😴</div>
+                        <div class="reason-text">เพราะชอบนอนท่าปลาดาว น่ารักมากๆ ทุกท่าทางของจ๋าจ้าน่ารักหมด</div>
+                    </div>
+                    
+                    <div class="reason-card">
+                        <div class="reason-emoji">💝</div>
+                        <div class="reason-text">เพราะหอมแก้มนายตั้งแต่ครั้งแรกที่เจอ ทำให้นายรู้ว่าจ๋าจ้าเป็นคนพิเศษจริงๆ</div>
+                    </div>
+                    
+                    <div class="reason-card">
+                        <div class="reason-emoji">🎨</div>
+                        <div class="reason-text">เพราะระบายสีเนียบสุดๆ ระบายหมีพูสวยมาก มีความสามารถหลากหลาย</div>
+                    </div>
+                    
+                    <div class="reason-card">
+                        <div class="reason-emoji">💕</div>
+                        <div class="reason-text">และเหตุผลสำคัญที่สุด... เพราะจ๋าจ้าคือจ๋าจ้า คนที่นายรักมากที่สุดในโลก</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Gallery Section -->
+        <section id="gallery" class="section">
+            <div class="gallery-container">
+                <h2 class="gallery-title">📸 ความทรงจำของเรา</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item has-image" data-gallery-id="1">
+                        <img src="S__20094993.jpg" alt="Gallery 1">
+                    </div>
+                    <div class="gallery-item has-image" data-gallery-id="2">
+                        <img src="S__20094994.jpg" alt="Gallery 2">
+                    </div>
+                    <div class="gallery-item has-image" data-gallery-id="3">
+                        <img src="S__20094995.jpg" alt="Gallery 3">
+                    </div>
+                    <div class="gallery-item has-image" data-gallery-id="4">
+                        <img src="S__20094996.jpg" alt="Gallery 4">
+                    </div>
+                    <div class="gallery-item has-image" data-gallery-id="5">
+                        <img src="S__20094997.jpg" alt="Gallery 5">
+                    </div>
+                    <div class="gallery-item has-image" data-gallery-id="6">
+                        <img src="S__20094998.jpg" alt="Gallery 6">
+                    </div>
+                    <div class="gallery-item has-image" data-gallery-id="7">
+                        <img src="S__20094999.jpg" alt="Gallery 7">
+                    </div>
+                    <div class="gallery-item has-image" data-gallery-id="8">
+                        <img src="S__20095000.jpg" alt="Gallery 8">
+                    </div>
+                    <div class="gallery-item has-image" data-gallery-id="9">
+                        <img src="S__20095001.jpg" alt="Gallery 9">
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Game Section -->
+        <section id="game" class="section">
+            <div class="game-container">
+                <h2 class="game-title">🎮 ทายใจจ๋าจ้า</h2>
+                <div class="game-card">
+                    <div class="game-score">คะแนน: <span id="score">0</span>/<span id="total">0</span></div>
+                    <div class="question" id="question">กำลังโหลดคำถาม...</div>
+                    <div class="answers" id="answers"></div>
+                    <div class="game-result" id="result"></div>
+                    <button class="next-btn" id="nextBtn" onclick="nextQuestion()">คำถามถัดไป</button>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <script>
+        // Floating elements
+        function createFloatingElements() {
+            const container = document.getElementById('floatingElements');
+            const elements = ['💖', '🦄', '🌹', '✨', '💕', '🌸', '💗', '🎀'];
+            
+            setInterval(() => {
+                const element = document.createElement('div');
+                element.className = 'float-item';
+                element.textContent = elements[Math.floor(Math.random() * elements.length)];
+                element.style.left = Math.random() * 100 + '%';
+                element.style.animationDuration = (Math.random() * 10 + 10) + 's';
+                element.style.fontSize = (Math.random() * 2 + 1) + 'rem';
+                container.appendChild(element);
+                
+                setTimeout(() => element.remove(), 15000);
+            }, 2000);
+        }
+        
+        createFloatingElements();
+        
+        // Navigation
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            const targetSection = document.getElementById(sectionId);
+            targetSection.classList.add('active');
+            
+            // Scroll to exact position with offset for nav
+            const navHeight = document.querySelector('.nav').offsetHeight;
+            const targetPosition = targetSection.offsetTop - navHeight;
+            
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+            });
+        }
+        
+        // Music player
+        let musicPlaying = false;
+        const bgMusic = document.getElementById('bgMusic');
+        
+        function toggleMusic() {
+            const musicPlayer = document.querySelector('.music-player');
+            
+            if (musicPlaying) {
+                bgMusic.pause();
+                musicPlayer.classList.add('paused');
+                musicPlaying = false;
+            } else {
+                bgMusic.play().catch(e => console.log('Audio play failed:', e));
+                musicPlayer.classList.remove('paused');
+                musicPlaying = true;
+            }
+        }
+        
+        // Auto-play music on first interaction
+        document.addEventListener('click', function initMusic() {
+            if (!musicPlaying) {
+                toggleMusic();
+            }
+            document.removeEventListener('click', initMusic);
+        }, { once: true });
+        
+        // Quiz game
+        const quizQuestions = [
+            {
+                question: "จ๋าจ้าชอบดอกไม้อะไรมากที่สุด?",
+                answers: ["ดอกกุหลาบ 🌹", "ดอก Daisy 🌼", "ดอกทิวลิป 🌷", "ดอกไม้ทุกชนิด"],
+                correct: 0
+            },
+            {
+                question: "จ๋าจ้าชอบสีอะไร?",
+                answers: ["สีชมพู 💗", "สีฟ้า 💙", "สีเขียว 💚", "สีม่วง 💜"],
+                correct: 0
+            },
+            {
+                question: "จ๋าจ้าชอบที่ไหนมากกว่ากัน?",
+                answers: ["ภูเขา ⛰️", "ทะเล 🌊", "ป่า 🌳", "ป่าช้ามาก"],
+                correct: 0
+            },
+            {
+                question: "จ๋าจ้าชอบฟังเพลงของใคร?",
+                answers: ["Taylor Swift 🎵", "Justin Bieber", "Ariana Grande", "หมอลำ"],
+                correct: 0
+            },
+            {
+                question: "จ๋าจ้าอาบน้ำเร็วแค่ไหน?",
+                answers: ["เร็วที่สุดในโลกใบนี้ ⚡", "ช้ามาก 🐌", "ปานกลาง ⏱️", "ขึ้นอยู่กับอารมณ์"],
+                correct: 0
+            },
+            {
+                question: "จ๋าจ้าชอบสัตว์อะไรมากกว่ากัน?",
+                answers: ["หมา 🐕", "แมว 🐱", "ชอบเท่ากัน", "ไม่ชอบทั้งคู่"],
+                correct: 0
+            },
+            {
+                question: "อิโมจิที่จ๋าจ้าชอบคืออะไร?",
+                answers: ["🦄", "💖", "🌸", "✨"],
+                correct: 0
+            },
+            {
+                question: "จ๋าจ้าสระผมทุกกี่วัน?",
+                answers: ["ทุก 2 วัน", "ทุกวัน", "3 วัน", "เมื่อรู้สึกว่าต้องสระ"],
+                correct: 0
+            },
+            {
+                question: "วันครบรอบของเราคือวันไหน?",
+                answers: ["29 มกราคม 2569", "2 พฤศจิกายน 2568", "7 กุมภาพันธ์", "18 ตุลาคม 2568"],
+                correct: 0
+            },
+            {
+                question: "จ๋าจ้าทำอาชีพอะไร?",
+                answers: ["นักกายภาพบำบัด 💪", "พยาบาล", "เชฟ", "นักบินอวกาศ 🚀"],
+                correct: 0
+            }
+        ];
+        
+        let currentQuestion = 0;
+        let score = 0;
+        let answered = false;
+        
+        function loadQuestion() {
+            if (currentQuestion >= quizQuestions.length) {
+                showFinalScore();
+                return;
+            }
+            
+            const q = quizQuestions[currentQuestion];
+            document.getElementById('question').textContent = q.question;
+            document.getElementById('score').textContent = score;
+            document.getElementById('total').textContent = quizQuestions.length;
+            
+            const answersDiv = document.getElementById('answers');
+            answersDiv.innerHTML = '';
+            
+            q.answers.forEach((answer, index) => {
+                const btn = document.createElement('button');
+                btn.className = 'answer-btn';
+                btn.textContent = answer;
+                btn.onclick = () => checkAnswer(index);
+                answersDiv.appendChild(btn);
+            });
+            
+            document.getElementById('result').textContent = '';
+            document.getElementById('nextBtn').style.display = 'none';
+            answered = false;
+        }
+        
+        function checkAnswer(selected) {
+            if (answered) return;
+            answered = true;
+            
+            const q = quizQuestions[currentQuestion];
+            const buttons = document.querySelectorAll('.answer-btn');
+            
+            if (selected === q.correct) {
+                buttons[selected].classList.add('correct');
+                document.getElementById('result').textContent = '🎉 นี้ย์ มันต้องงี้แฟนนายอ่ะ';
+                score++;
+                createSparkles();
+            } else {
+                buttons[selected].classList.add('wrong');
+                buttons[q.correct].classList.add('correct');
+                document.getElementById('result').textContent = '😊 ห้ามเถียงนายเด็ดขาดนายรู้จักจ้าดีกว่า';
+            }
+            
+            document.getElementById('score').textContent = score;
+            document.getElementById('nextBtn').style.display = 'inline-block';
+        }
+        
+        function nextQuestion() {
+            currentQuestion++;
+            loadQuestion();
+        }
+        
+        function showFinalScore() {
+            const percentage = (score / quizQuestions.length * 100).toFixed(0);
+            let message = '';
+            
+            if (percentage === 100) {
+                message = '🎊 เก่งมากก รู้จักตัวดีที่สุดเลย!';
+            } else if (percentage >= 70) {
+                message = '👏 เว่อไปป่ะ แต่นายได้เต็มนะ';
+            } else if (percentage >= 50) {
+                message = '😊 ดีแล้ว! แต่ควรจะรู้จักจ๋าจ้ามากกว่านี้นะ';
+            } else {
+                message = '💕 ไม่เป็นไร! ค่อยๆ ทำความรู้จักกันมากขึ้นนะ';
+            }
+            
+            document.getElementById('question').textContent = 'เกมจบแล้ว!';
+            document.getElementById('answers').innerHTML = `
+                <div style="text-align: center; padding: 30px;">
+                    <h3 style="font-size: 2rem; margin-bottom: 20px;">${message}</h3>
+                    <p style="font-size: 1.5rem; color: var(--pink-dark);">คะแนนของคุณ: ${score}/${quizQuestions.length} (${percentage}%)</p>
+                    <button class="next-btn" style="display: inline-block; margin-top: 20px;" onclick="restartGame()">เล่นอีกครั้ง</button>
+                </div>
+            `;
+            document.getElementById('result').textContent = '';
+            document.getElementById('nextBtn').style.display = 'none';
+        }
+        
+        function restartGame() {
+            currentQuestion = 0;
+            score = 0;
+            answered = false;
+            loadQuestion();
+        }
+        
+        function createSparkles() {
+            for (let i = 0; i < 20; i++) {
+                setTimeout(() => {
+                    const sparkle = document.createElement('div');
+                    sparkle.className = 'sparkle';
+                    sparkle.textContent = '✨';
+                    sparkle.style.left = Math.random() * window.innerWidth + 'px';
+                    sparkle.style.top = Math.random() * window.innerHeight + 'px';
+                    sparkle.style.fontSize = (Math.random() * 2 + 1) + 'rem';
+                    document.body.appendChild(sparkle);
+                    
+                    setTimeout(() => sparkle.remove(), 1000);
+                }, i * 50);
+            }
+        }
+        
+        // Initialize game
+        loadQuestion();
+        
+        // Smooth scroll for navigation
+        document.querySelectorAll('.nav-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const section = this.onclick.toString().match(/'(\w+)'/)[1];
+                showSection(section);
+            });
+        });
+
+        // Update CSS var for nav height so sections don't create extra scroll
+        function updateNavHeightVar() {
+            const nav = document.querySelector('.nav');
+            const h = nav ? nav.offsetHeight : 0;
+            document.documentElement.style.setProperty('--nav-height', h + 'px');
+        }
+        window.addEventListener('load', updateNavHeightVar);
+        window.addEventListener('resize', updateNavHeightVar);
+    </script>
+</body>
+</html>.section
