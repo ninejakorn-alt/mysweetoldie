@@ -659,6 +659,15 @@
     </style>
 </head>
 <body>
+    <div id="start-overlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, #FFE5EC, #FFB3C6); z-index: 9999; display: flex; flex-direction: column; justify-content: center; align-items: center; transition: opacity 1s ease;">
+        <div style="font-size: 5rem; margin-bottom: 20px; animation: bounce 2s infinite;">🎁</div>
+        <h2 style="font-family: 'Mitr', sans-serif; color: #FF85A1; margin-bottom: 20px; text-align: center; font-weight: 400;">ของขวัญสำหรับจ๋าจ้า</h2>
+        <button onclick="startSurprise()" style="font-family: 'Mitr', sans-serif; padding: 15px 30px; font-size: 1.2rem; background: white; color: #FF85A1; border: none; border-radius: 50px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); cursor: pointer; transition: transform 0.2s;">
+            กดเพื่อเปิดดูเลย! ✨
+        </button>
+    </div>
+
+    <div class="floating-elements" id="floatingElements"></div>
     <!-- Floating Elements -->
     <div class="floating-elements" id="floatingElements"></div>
     
@@ -1118,32 +1127,6 @@
             });
         }
         
-        // Music player
-        let musicPlaying = false;
-        const bgMusic = document.getElementById('bgMusic');
-        
-        function toggleMusic() {
-            const musicPlayer = document.querySelector('.music-player');
-            
-            if (musicPlaying) {
-                bgMusic.pause();
-                musicPlayer.classList.add('paused');
-                musicPlaying = false;
-            } else {
-                bgMusic.play().catch(e => console.log('Audio play failed:', e));
-                musicPlayer.classList.remove('paused');
-                musicPlaying = true;
-            }
-        }
-        
-        // Auto-play music on first interaction
-        document.addEventListener('click', function initMusic() {
-            if (!musicPlaying) {
-                toggleMusic();
-            }
-            document.removeEventListener('click', initMusic);
-        }, { once: true });
-        
         // Quiz game
         const quizQuestions = [
             {
@@ -1324,6 +1307,29 @@
         }
         window.addEventListener('load', updateNavHeightVar);
         window.addEventListener('resize', updateNavHeightVar);
+        
+        function startSurprise() {
+            // 1. เล่นเพลง
+            const bgMusic = document.getElementById('bgMusic');
+            const musicPlayer = document.querySelector('.music-player');
+            
+            // พยายามเล่นเพลง
+            bgMusic.play().then(() => {
+                musicPlaying = true;
+                musicPlayer.classList.remove('paused');
+            }).catch(e => {
+                console.log("Audio play failed:", e);
+            });
+
+            // 2. ซ่อนหน้า Overlay (ค่อยๆ จางหายไป)
+            const overlay = document.getElementById('start-overlay');
+            overlay.style.opacity = '0';
+            
+            // รอ 1 วินาทีให้จางหมด แล้วค่อยลบออกจากหน้าจอ
+            setTimeout(() => {
+                overlay.style.display = 'none';
+            }, 1000);
+        }
     </script>
 </body>
 </html>.section
